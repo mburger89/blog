@@ -9,7 +9,8 @@ module Visible
 		}
 	end
 	
-	class_method do
+
+	class_methods do
 		def public_count
 			where(status: 'public').count
 		end
