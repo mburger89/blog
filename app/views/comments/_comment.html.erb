@@ -7,4 +7,11 @@
 	<strong>Comment:</strong>
 	<%= comment.body %>
 </p>
+<p>
+	<%= link_to "Destory Comment", 
+		[comment.article, comment], data: {
+			trubo_method: :delete,
+			turbo_confirm: "Are you sure?"
+		}%>
+</p>
 <% end %>
