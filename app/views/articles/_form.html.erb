@@ -1,3 +1,9 @@
+<style>
+    <!-- for body input  -->
+    #article_body {
+        display: block;
+    }
+</style>
 <%= form_with model: article do |form| %>
     <div>
         <%= form.label :title %><br>
@@ -10,15 +16,15 @@
         <%= form.label :status %>
         <%= form.select :status, Visible::VALID_STATUSES, selected: article.status || 'public' %>
     </div>
-    <div>
+    <div style="display: block">
         <%= form.label :body %><br>
         <%= form.text_area :body %>
-        <% article.errors.full_mesage_for(:body).each do |message| %>
+        <% article.errors.full_messages_for(:body).each do |message| %>
             <div><%= message %></div>
         <% end %>
     </div>
 
-    <div>
+    <div style="margin: 5px">
         <%= form.submit %>
     </div>
 
